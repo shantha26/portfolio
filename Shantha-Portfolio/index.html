@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shantha Lakshmi S — Software Development Enthusiast | Chennai</title>
+<meta name="description" content="Shantha Lakshmi S — B.Tech Information Technology student in Chennai. 500+ LeetCode problems solved, full-stack developer building scalable applications. Open to internships and technical opportunities.">
+<meta name="theme-color" content="#0B0E14">
+<link rel="canonical" href="https://shantha26.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shantha Lakshmi S — Software Developer | Chennai">
+<meta property="og:description" content="B.Tech IT student, 500+ LeetCode problems solved. Building full-stack applications and continuously learning. Open to internships & technical opportunities.">
+<meta property="og:url" content="https://shantha26.dev/">
+<meta property="og:site_name" content="Shantha Lakshmi S">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shantha Lakshmi S — Software Developer | Chennai">
+<meta name="twitter:description" content="B.Tech IT student, 500+ LeetCode problems solved. Building full-stack applications and continuously learning.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shantha Lakshmi S",
+  "jobTitle": "Software Development Student",
+  "description": "B.Tech Information Technology student building full-stack applications, passionate about software development and problem solving.",
+  "url": "https://shantha26.dev/",
+  "email": "mailto:shanthalakshmi2606@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Chennai",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://github.com/shantha26",
+    "https://www.linkedin.com/in/shantha-lakshmi-s/"
+  ],
+  "knowsAbout": ["Java", "Python", "SQL", "Full Stack Development", "Data Structures and Algorithms", "Angular", "Node.js", "MongoDB", "MySQL"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+:root{
+  --bg:#0B0E14;
+  --bg-soft:#10141C;
+  --panel:#141923;
+  --teal:#5EEAD4;
+  --amber:#F5A623;
+  --text:#E6E8EB;
+  --muted:#8B95A1;
+  --line:#222933;
+  --display:'Space Grotesk', sans-serif;
+  --body:'Inter', sans-serif;
+  --mono:'JetBrains Mono', monospace;
+}
+html[data-theme="light"]{
+  --bg:#F6F5F1;
+  --bg-soft:#EFEDE6;
+  --panel:#FFFFFF;
+  --teal:#0E8C7C;
+  --amber:#C97A1B;
+  --text:#171A1F;
+  --muted:#5A6270;
+  --line:#E0DED7;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--body);
+  overflow-x:hidden;
+  transition:background .35s, color .35s;
+}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+::selection{background:var(--teal);color:#0B0E14;}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;}
+
+#scroll-progress{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--teal),var(--amber));
+  z-index:200;transition:width .1s linear;
+}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 6%;
+  background:rgba(11,14,20,0.75);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+html[data-theme="light"] nav{background:rgba(246,245,241,0.8);}
+.logo{font-family:var(--mono);font-size:15px;color:var(--teal);letter-spacing:0.5px;}
+.logo span{color:var(--muted);}
+.navlinks{display:flex;gap:28px;font-family:var(--mono);font-size:13px;color:var(--muted);align-items:center;}
+.navlinks a{position:relative;transition:color .25s;}
+.navlinks a:hover, .navlinks a:focus-visible{color:var(--text);}
+.navlinks a::after{content:'';position:absolute;left:0;bottom:-6px;height:1px;width:0;background:var(--teal);transition:width .25s;}
+.navlinks a:hover::after{width:100%;}
+#theme-toggle{
+  background:transparent;border:1px solid var(--line);color:var(--text);
+  width:34px;height:34px;border-radius:50%;cursor:pointer;font-size:15px;
+  display:flex;align-items:center;justify-content:center;transition:border-color .25s;
+}
+#theme-toggle:hover{border-color:var(--teal);}
+@media (max-width:780px){.navlinks a:not(#theme-toggle){display:none;}}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:0 6%;overflow:hidden;}
+#hero-canvas{position:absolute;top:0;right:0;height:100%;width:58%;opacity:0.9;}
+@media (max-width:900px){#hero-canvas{width:100%;opacity:0.3;}}
+.hero-inner{position:relative;z-index:2;max-width:700px;padding-top:90px;padding-bottom:60px;}
+.term-line{font-family:var(--mono);font-size:13px;color:var(--teal);margin-bottom:16px;display:flex;gap:8px;align-items:center;}
+.term-line .prompt{color:var(--amber);}
+.cursor{display:inline-block;width:8px;height:16px;background:var(--teal);animation:blink 1s steps(1) infinite;}
+@keyframes blink{50%{opacity:0;}}
+.hero h1{font-family:var(--display);font-size:clamp(36px,5.6vw,64px);line-height:1.08;font-weight:700;margin-bottom:16px;opacity:0;animation:rise .8s ease forwards;animation-delay:.3s;}
+.hero h1 .accent{color:var(--teal);}
+.hero p.summary{font-size:16px;line-height:1.75;color:var(--muted);max-width:540px;margin-bottom:26px;opacity:0;animation:rise .8s ease forwards;animation-delay:.55s;}
+@keyframes rise{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
+
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;opacity:0;animation:rise .8s ease forwards;animation-delay:.7s;}
+.badge{font-family:var(--mono);font-size:12.5px;color:var(--text);border:1px solid var(--line);background:var(--panel);padding:8px 14px;border-radius:20px;display:flex;align-items:center;gap:6px;}
+.badge .emoji{font-size:14px;}
+
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:rise .8s ease forwards;animation-delay:.85s;}
+.btn{font-family:var(--mono);font-size:13px;padding:13px 24px;border-radius:2px;border:1px solid var(--teal);color:var(--teal);transition:all .25s;cursor:pointer;background:transparent;display:inline-flex;align-items:center;gap:8px;}
+.btn:hover,.btn:focus-visible{background:var(--teal);color:#0B0E14;}
+.btn.ghost{border-color:var(--line);color:var(--muted);}
+.btn.ghost:hover{border-color:var(--muted);color:var(--text);background:transparent;}
+.btn.solid{background:var(--teal);color:#0B0E14;}
+.btn.solid:hover{opacity:.85;background:var(--teal);}
+
+section{padding:110px 6%;position:relative;}
+.eyebrow{font-family:var(--mono);font-size:12px;color:var(--amber);letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--amber);}
+.sec-title{font-family:var(--display);font-size:clamp(28px,4vw,42px);font-weight:600;margin-bottom:50px;}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;}
+@media (max-width:850px){.about-grid{grid-template-columns:1fr;}}
+.about-text p{color:var(--muted);line-height:1.8;font-size:16px;margin-bottom:18px;}
+.interest-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.interest-tags span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);padding:7px 13px;border-radius:20px;color:var(--teal);}
+
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
+.stat-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px 22px;text-align:left;transition:transform .3s, border-color .3s;}
+.stat-card:hover{transform:translateY(-6px);border-color:var(--teal);}
+.stat-card .num{font-family:var(--display);font-size:36px;color:var(--teal);font-weight:700;}
+.stat-card .label{font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:6px;}
+
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;}
+.why-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px;transition:transform .3s, border-color .3s, box-shadow .3s;}
+.why-card:hover{transform:translateY(-6px) scale(1.01);border-color:var(--amber);box-shadow:0 12px 30px -16px rgba(0,0,0,.5);}
+.why-card h3{font-family:var(--display);font-size:18px;margin-bottom:10px;color:var(--text);}
+.why-card p{color:var(--muted);font-size:14.5px;line-height:1.6;}
+
+.gh-lc-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+@media (max-width:850px){.gh-lc-grid{grid-template-columns:1fr;}}
+.gh-lc-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:30px;transition:border-color .3s,transform .3s;}
+.gh-lc-card:hover{border-color:var(--teal);transform:translateY(-4px);}
+.gh-lc-card h3{font-family:var(--display);font-size:19px;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.gh-lc-mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:18px;}
+.gh-lc-mini-stats div{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:14px;text-align:center;}
+.gh-lc-mini-stats .v{font-family:var(--display);font-size:22px;color:var(--teal);font-weight:700;}
+.gh-lc-mini-stats .l{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.5px;}
+.gh-lc-card img{width:100%;border-radius:8px;border:1px solid var(--line);}
+.gh-lc-card p.note{color:var(--muted);font-size:13.5px;margin-top:14px;line-height:1.6;}
+.lang-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.lang-tags span{font-family:var(--mono);font-size:11.5px;border:1px solid var(--line);padding:5px 11px;border-radius:20px;color:var(--amber);}
+
+.learning-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;}
+.learning-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:24px;text-align:center;transition:transform .4s ease;animation:floaty 5s ease-in-out infinite;}
+.learning-card:nth-child(2){animation-delay:.6s;}
+.learning-card:nth-child(3){animation-delay:1.2s;}
+.learning-card:nth-child(4){animation-delay:1.8s;}
+.learning-card:nth-child(5){animation-delay:2.4s;}
+@keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.learning-card .ico{font-size:26px;margin-bottom:10px;}
+.learning-card h4{font-family:var(--display);font-size:15px;}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px;}
+.skill-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px;transition:transform .3s, border-color .3s;}
+.skill-card:hover{transform:translateY(-6px);border-color:var(--teal);}
+.skill-card h3{font-family:var(--mono);font-size:13px;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
+.skill-card ul{list-style:none;}
+.skill-card li{font-size:14px;color:var(--text);padding:7px 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:8px;transition:padding-left .2s, color .2s;}
+.skill-card li:first-child{border-top:none;}
+.skill-card li:hover{padding-left:6px;color:var(--teal);}
+
+.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:26px;}
+.project-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:transform .4s, box-shadow .4s, border-color .4s;perspective:1000px;}
+.project-card:hover{transform:translateY(-8px) rotateX(2deg);border-color:var(--teal);box-shadow:0 20px 40px -22px rgba(0,0,0,.6);}
+.project-thumb{height:140px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;color:var(--bg);background:linear-gradient(135deg,var(--teal),var(--amber));letter-spacing:1px;text-transform:uppercase;}
+.project-body{padding:24px;}
+.project-body h3{font-family:var(--display);font-size:21px;margin-bottom:10px;font-weight:600;}
+.project-body .stack{font-family:var(--mono);font-size:11.5px;display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.project-body .stack span{border:1px solid var(--line);padding:4px 9px;border-radius:20px;color:var(--muted);}
+.project-body .case p{color:var(--muted);font-size:14px;line-height:1.65;margin-bottom:8px;}
+.project-body .case strong{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.5px;color:var(--amber);}
+.project-body .case .impact{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);color:var(--text);font-size:13.5px;line-height:1.6;}
+.project-body .case .impact strong{color:var(--teal);}
+.project-foot{padding:0 24px 22px;}
+.gh-btn{font-family:var(--mono);font-size:12.5px;color:var(--teal);border:1px solid var(--line);padding:9px 16px;border-radius:20px;display:inline-flex;align-items:center;gap:6px;transition:border-color .25s,color .25s;}
+.gh-btn:hover{border-color:var(--teal);}
+
+.timeline{position:relative;padding-left:30px;border-left:1px solid var(--line);}
+.tl-item{position:relative;margin-bottom:44px;}
+.tl-item::before{content:'';position:absolute;left:-36px;top:4px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--teal);}
+.tl-item .year{font-family:var(--mono);font-size:13px;color:var(--amber);margin-bottom:4px;}
+.tl-item h3{font-family:var(--display);font-size:19px;margin-bottom:4px;}
+.tl-item p{color:var(--muted);font-size:14.5px;}
+
+.exp-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:32px;}
+.exp-card h3{font-family:var(--display);font-size:21px;margin-bottom:4px;}
+.exp-card .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+.exp-card ul{padding-left:18px;color:var(--muted);font-size:15px;line-height:1.85;}
+
+.cert-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;}
+.cert{border:1px solid var(--line);border-radius:8px;padding:22px;background:var(--panel);display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--text);transition:border-color .3s,transform .3s;}
+.cert:hover{border-color:var(--amber);transform:translateY(-4px);}
+.cert .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);}
+.cert .org{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;}
+
+.contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;}
+@media (max-width:850px){.contact-grid{grid-template-columns:1fr;}}
+.contact-info p.lead{color:var(--muted);font-size:16px;line-height:1.7;margin-bottom:26px;}
+.contact-row{display:flex;align-items:center;gap:12px;margin-bottom:16px;font-size:14.5px;}
+.contact-row .ico{width:32px;height:32px;border-radius:50%;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--teal);flex-shrink:0;}
+form#contact-form{display:flex;flex-direction:column;gap:16px;}
+.field{display:flex;flex-direction:column;gap:6px;}
+.field label{font-family:var(--mono);font-size:12px;color:var(--muted);}
+.field input, .field textarea{background:var(--bg-soft);border:1px solid var(--line);border-radius:6px;padding:13px 14px;color:var(--text);font-family:var(--body);font-size:14.5px;resize:vertical;transition:border-color .25s;}
+.field input:focus, .field textarea:focus{border-color:var(--teal);outline:none;}
+.field .error{font-family:var(--mono);font-size:11.5px;color:#ff7b7b;min-height:14px;}
+#form-status{font-family:var(--mono);font-size:13px;min-height:18px;opacity:0;transform:translateY(-6px);transition:opacity .35s, transform .35s;}
+#form-status.success,#form-status.error{opacity:1;transform:translateY(0);}
+#form-status.success{color:var(--teal);}
+#form-status.error{color:#ff7b7b;animation:shake .4s ease;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-4px);}75%{transform:translateX(4px);}}
+.hp{position:absolute;left:-9999px;opacity:0;}
+
+#submit-btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-width:170px;}
+#submit-btn:hover:not(:disabled),#submit-btn:focus-visible{background:var(--teal);color:#0B0E14;transform:translateY(-2px);}
+#submit-btn:disabled{cursor:not-allowed;opacity:.85;}
+#submit-btn.btn-success-state{border-color:var(--teal);background:var(--teal);color:#0B0E14;}
+.btn-spinner{display:none;width:14px;height:14px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+footer{padding:36px 6%;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-family:var(--mono);font-size:12px;color:var(--muted);}
+.footer-links{display:flex;gap:18px;}
+.footer-links a{transition:color .25s;}
+.footer-links a:hover{color:var(--teal);}
+
+#back-to-top{position:fixed;bottom:26px;right:26px;width:46px;height:46px;border-radius:50%;background:var(--panel);border:1px solid var(--line);color:var(--teal);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:90;font-size:18px;opacity:0;pointer-events:none;transition:opacity .3s, transform .3s, border-color .25s;}
+#back-to-top.show{opacity:1;pointer-events:auto;}
+#back-to-top:hover{border-color:var(--teal);transform:translateY(-3px);}
+</style>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<nav>
+  <div class="logo">SL<span>.dev</span></div>
+  <div class="navlinks">
+    <a href="#about">about</a>
+    <a href="#skills">stack</a>
+    <a href="#projects">projects</a>
+    <a href="#journey">journey</a>
+    <a href="#contact">contact</a>
+    <button id="theme-toggle" aria-label="Toggle dark and light mode">🌙</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-inner">
+    <div class="term-line"><span class="prompt">$</span> whoami<span class="cursor"></span></div>
+    <h1>Shantha Lakshmi S<br><span class="accent">Building software, solving problems,<br>and continuously learning.</span></h1>
+    <p class="summary">B.Tech Information Technology student passionate about software development, modern web technologies, and problem solving. Experienced in building full-stack applications through academic projects and internship experience.</p>
+
+    <div class="badges">
+      <span class="badge"><span class="emoji">🏆</span>500+ LeetCode Problems Solved</span>
+      <span class="badge"><span class="emoji">🎓</span>CGPA 8.09</span>
+      <span class="badge"><span class="emoji">💼</span>Frontend Developer Intern</span>
+      <span class="badge"><span class="emoji">📍</span>Chennai, India</span>
+    </div>
+
+    <div class="cta-row">
+      <a href="#projects" class="btn solid">View Projects</a>
+      <a href="https://drive.google.com/uc?export=download&id=1hxCivN1WtYADstRdCZdmVMNVv0GXcyMI" target="_blank" rel="noopener" class="btn">Download Resume</a>
+      <a href="https://github.com/shantha26" target="_blank" rel="noopener" class="btn ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/shantha-lakshmi-s/" target="_blank" rel="noopener" class="btn ghost">LinkedIn</a>
+      <a href="#contact" class="btn ghost">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="eyebrow">01 — About</div>
+  <h2 class="sec-title reveal">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>I am a B.Tech Information Technology student with strong foundations in Java, Python, SQL, Data Structures, Algorithms, OOP, DBMS, and Full Stack Development.</p>
+      <p>I enjoy building scalable applications, solving challenging problems, and continuously learning modern technologies.</p>
+      <p style="color:var(--text);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-top:26px;">My interests</p>
+      <div class="interest-tags">
+        <span>Software Development</span>
+        <span>Full Stack Development</span>
+        <span>Backend Development</span>
+        <span>Data Analytics</span>
+        <span>Artificial Intelligence</span>
+      </div>
+    </div>
+    <div class="stats-grid reveal">
+      <div class="stat-card"><div class="num" data-count="500" data-suffix="+">0</div><div class="label">LeetCode Problems Solved</div></div>
+      <div class="stat-card"><div class="num" data-count="8.09" data-decimal="true">0</div><div class="label">CGPA</div></div>
+      <div class="stat-card"><div class="num" data-count="6" data-suffix="+">0</div><div class="label">Projects Built</div></div>
+      <div class="stat-card"><div class="num" data-count="1">0</div><div class="label">Industry Internship</div></div>
+      <div class="stat-card"><div class="num" data-count="2027" data-nocount="true">2027</div><div class="label">Expected Graduation</div></div>
+      <div class="stat-card"><div class="num" data-count="10" data-suffix="+">0</div><div class="label">Technical Certifications</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="eyebrow">02 — Value</div>
+  <h2 class="sec-title reveal">What I Bring To A Team</h2>
+  <div class="why-grid reveal">
+    <div class="why-card"><h3>Problem Solving</h3><p>Strong DSA and algorithmic thinking, sharpened across 500+ LeetCode problems.</p></div>
+    <div class="why-card"><h3>Full Stack Development</h3><p>Experience building complete applications — frontend, backend, database, and auth.</p></div>
+    <div class="why-card"><h3>Quick Learner</h3><p>Able to adapt to new technologies and tools quickly when a project demands it.</p></div>
+    <div class="why-card"><h3>Strong Fundamentals</h3><p>Solid grounding in OOP, DBMS, and DSA from coursework and applied projects.</p></div>
+    <div class="why-card"><h3>Team Collaboration</h3><p>Internship and project experience working within development teams and workflows.</p></div>
+    <div class="why-card"><h3>Analytical Thinking</h3><p>Ability to break down complex problems into clear, solvable pieces.</p></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="eyebrow">03 — Stack</div>
+  <h2 class="sec-title reveal">Tech Stack</h2>
+  <div class="skills-grid reveal">
+    <div class="skill-card"><h3>Programming</h3><ul><li>☕ Java</li><li>🐍 Python</li><li>🗄️ SQL</li></ul></div>
+    <div class="skill-card"><h3>Frontend</h3><ul><li>🧱 HTML</li><li>🎨 CSS</li><li>⚡ JavaScript</li><li>🅰️ Angular</li></ul></div>
+    <div class="skill-card"><h3>Backend</h3><ul><li>🟢 Node.js</li><li>🚂 Express.js</li><li>🔗 REST APIs</li></ul></div>
+    <div class="skill-card"><h3>Database</h3><ul><li>🍃 MongoDB</li><li>🐬 MySQL</li></ul></div>
+    <div class="skill-card"><h3>Tools</h3><ul><li>🔧 Git</li><li>🐙 GitHub</li><li>🧩 VS Code</li><li>📮 Postman</li></ul></div>
+    <div class="skill-card"><h3>Core Computer Science</h3><ul><li>🧠 DSA</li><li>🏗️ OOP</li><li>🗃️ DBMS</li><li>💻 Operating Systems</li></ul></div>
+  </div>
+</section>
+
+<section id="stats-dev">
+  <div class="eyebrow">04 — Activity</div>
+  <h2 class="sec-title reveal">CodeChef &amp; LeetCode</h2>
+  <div class="gh-lc-grid reveal">
+    <div class="gh-lc-card">
+      <h3>⭐ CodeChef</h3>
+      <div class="gh-lc-mini-stats">
+        <div><div class="v">⭐⭐⭐</div><div class="l">3-Star Rated</div></div>
+        <div><div class="v">CP</div><div class="l">Competitive Programmer</div></div>
+      </div>
+      <p class="note">Competitive programming practice on CodeChef, sharpening algorithmic thinking and contest-driven problem solving alongside academic coursework.</p>
+      <div class="lang-tags">
+        <span>Contests</span><span>Algorithmic Problem Solving</span><span>Time-Bound Coding</span>
+      </div>
+      <div class="cta-row" style="margin-top:18px;">
+        <a href="https://www.codechef.com/users/shantha_26" target="_blank" rel="noopener" class="btn ghost">View CodeChef Profile</a>
+      </div>
+    </div>
+    <div class="gh-lc-card">
+      <h3>🏆 LeetCode</h3>
+      <div class="gh-lc-mini-stats">
+        <div><div class="v">500+</div><div class="l">Problems Solved</div></div>
+        <div><div class="v">DSA</div><div class="l">Strong Foundation</div></div>
+      </div>
+      <p class="note">A consistent problem-solving journey across arrays, trees, graphs, dynamic programming and greedy algorithms — building speed and accuracy for technical interviews.</p>
+      <div class="lang-tags">
+        <span>Arrays &amp; Strings</span><span>Trees &amp; Graphs</span><span>Dynamic Programming</span><span>Greedy</span>
+      </div>
+      <div class="cta-row" style="margin-top:18px;">
+        <a href="https://leetcode.com/u/shantha26/" target="_blank" rel="noopener" class="btn ghost">View LeetCode Profile</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="eyebrow">05 — Work</div>
+  <h2 class="sec-title reveal">Featured Work</h2>
+  <div class="project-grid reveal">
+
+    <div class="project-card">
+      <div class="project-thumb">Cyber Complaint Portal</div>
+      <div class="project-body">
+        <h3>AI-Powered Cyber Complaint & Threat Analysis Portal</h3>
+        <div class="stack"><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>JWT</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Cybercrime victims often lack a clear, secure channel to file and track complaints in real time.</p>
+          <p><strong>Solution</strong> — A secure portal with JWT-based authentication, role-based access, and structured complaint workflows.</p>
+          <p><strong>Features</strong> — Role-based admin dashboard, complaint tracking, and a cyber assistant module for guided reporting.</p>
+          <p><strong>Challenges</strong> — Designing REST APIs that safely handle sensitive complaint data and status updates.</p>
+          <p><strong>Learnings</strong> — Hands-on practice with authentication design, role-based access control, and secure API structure.</p>
+          <p class="impact"><strong>Why it matters</strong> — Demonstrates the ability to design secure, role-aware systems for handling sensitive real-world data — a core skill for backend and full-stack roles.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/Cyber-Complaint-Portal" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">Campus Event Hub</div>
+      <div class="project-body">
+        <h3>Campus Event Hub</h3>
+        <div class="stack"><span>Angular</span><span>Node.js</span><span>MongoDB</span><span>JWT</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Campus events were managed through scattered spreadsheets and manual sign-in, making registration and check-in slow and error-prone.</p>
+          <p><strong>Solution</strong> — A full-stack event management platform with JWT-secured authentication and QR-code check-in for fast, contactless verification.</p>
+          <p><strong>Features</strong> — Role-based access for organizers and attendees, streamlined event registration, a file upload system for event assets, and REST APIs powering end-to-end event management.</p>
+          <p><strong>Challenges</strong> — Keeping QR verification fast and reliable under concurrent check-ins while enforcing role-based permissions across the platform.</p>
+          <p><strong>Learnings</strong> — Practical experience with JWT session handling, QR-based verification flows, and structuring REST APIs around real-time event data.</p>
+          <p class="impact"><strong>Why it matters</strong> — Shows end-to-end full-stack delivery: authentication, real-time verification, and role-based workflows shipped as a complete working platform.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/Campus-Event-Hub" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">Student Dashboard</div>
+      <div class="project-body">
+        <h3>Student Dashboard</h3>
+        <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Students often lack a single, organized view of their academic information, leaving key details spread across disconnected tools.</p>
+          <p><strong>Solution</strong> — A clean, front-end student dashboard that consolidates relevant information into one structured, easy-to-navigate interface.</p>
+          <p><strong>Features</strong> — Organized dashboard layout, distinct content sections, and responsive styling suitable for academic or portfolio use.</p>
+          <p><strong>Challenges</strong> — Structuring a layout that stays clear and readable across different screen sizes without a backend to manage state.</p>
+          <p><strong>Learnings</strong> — Strengthened core front-end skills in layout design, semantic HTML structure, and CSS-driven responsiveness.</p>
+          <p class="impact"><strong>Why it matters</strong> — Reflects strong front-end fundamentals and attention to clean UI structure, the foundation every full-stack build relies on.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/Student-Dashboard" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">University Website</div>
+      <div class="project-body">
+        <h3>Skyline International University — Official Website</h3>
+        <div class="stack"><span>HTML5</span><span>CSS3</span><span>Font Awesome</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Prospective students need a clear, credible online presence to learn about a university's programs, facilities, and offerings before applying.</p>
+          <p><strong>Solution</strong> — A responsive static website showcasing academic programs, campus facilities, and certificate courses through a modern, structured layout.</p>
+          <p><strong>Features</strong> — A modern hero banner, facilities overview, 2025 certificate programs, testimonials, and integrated social media links.</p>
+          <p><strong>Challenges</strong> — Balancing visual polish with fast load times and consistent responsiveness across devices using only HTML5 and CSS3.</p>
+          <p><strong>Learnings</strong> — Improved skills in semantic page structure, responsive layout techniques, and deploying static sites via GitHub Pages and Netlify.</p>
+          <p class="impact"><strong>Why it matters</strong> — Demonstrates the ability to take a real client-style brief — a credible institutional website — from concept to a polished, deployable product.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/skyline-official-website" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">Expense Tracker</div>
+      <div class="project-body">
+        <h3>Expense Tracker</h3>
+        <div class="stack"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Tracking day-to-day personal expenses manually makes it hard to stay aware of spending patterns.</p>
+          <p><strong>Solution</strong> — A JavaScript-driven web app that lets users log, view, and manage personal expenses in real time.</p>
+          <p><strong>Features</strong> — Add and remove expense entries, running balance updates, and a clean, distraction-free interface.</p>
+          <p><strong>Challenges</strong> — Managing dynamic UI updates and state purely in vanilla JavaScript without a framework.</p>
+          <p><strong>Learnings</strong> — Deepened understanding of DOM manipulation, event handling, and structuring client-side state logic.</p>
+          <p class="impact"><strong>Why it matters</strong> — Shows comfort building functional, stateful interfaces with plain JavaScript — no shortcuts, no frameworks to lean on.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/Expense-Tracker" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-thumb">Movie Seat Booking</div>
+      <div class="project-body">
+        <h3>Movie Seat Booking</h3>
+        <div class="stack"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+        <div class="case">
+          <p><strong>Problem</strong> — Manual or unclear seat selection at booking time often leads to confusion over availability and seat choice.</p>
+          <p><strong>Solution</strong> — An interactive seat selection and booking interface that visually represents seat availability for a movie ticketing flow.</p>
+          <p><strong>Features</strong> — Real-time seat selection, visual availability states, and a streamlined booking confirmation flow.</p>
+          <p><strong>Challenges</strong> — Keeping the seat grid state accurate and responsive as selections change, using only client-side logic.</p>
+          <p><strong>Learnings</strong> — Practical experience with interactive UI state management and event-driven design in vanilla JavaScript.</p>
+          <p class="impact"><strong>Why it matters</strong> — Demonstrates the ability to design intuitive, real-time interactive UI logic — directly transferable to booking, e-commerce, and dashboard interfaces.</p>
+        </div>
+      </div>
+      <div class="project-foot"><a class="gh-btn" href="https://github.com/shantha26/Movie-Seat-Booking" target="_blank" rel="noopener">🐙 View on GitHub</a></div>
+    </div>
+
+  </div>
+</section>
+
+<section id="journey">
+  <div class="eyebrow">06 — Journey</div>
+  <h2 class="sec-title reveal">My Journey</h2>
+  <div class="timeline reveal">
+    <div class="tl-item"><div class="year">2023</div><h3>Started B.Tech IT</h3><p>Began studies at St. Joseph's Institute of Technology, Chennai.</p></div>
+    <div class="tl-item"><div class="year">2025</div><h3>Frontend Developer Internship</h3><p>Joined Securo Facility Management Pvt Ltd as a Frontend Developer Intern.</p></div>
+    <div class="tl-item"><div class="year">2025</div><h3>Built Campus Event Hub</h3><p>Shipped a full-stack event management platform with JWT auth and QR check-in.</p></div>
+    <div class="tl-item"><div class="year">2026</div><h3>Solved 500+ LeetCode Problems</h3><p>Crossed 500 solved problems, building strong DSA and algorithmic foundations.</p></div>
+    <div class="tl-item"><div class="year">2027</div><h3>Expected Graduation</h3><p>Set to complete B.Tech Information Technology.</p></div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="eyebrow">07 — Experience</div>
+  <h2 class="sec-title reveal">Internship</h2>
+  <div class="exp-card reveal">
+    <h3>Frontend Developer Intern</h3>
+    <div class="meta">Securo Facility Management Private Limited · Jun 2025 – Jul 2025</div>
+    <ul>
+      <li>Developed responsive frontend interfaces</li>
+      <li>Contributed to Campus Event Hub</li>
+      <li>Implemented project features</li>
+      <li>Worked with debugging and version control</li>
+      <li>Collaborated in development teams</li>
+    </ul>
+  </div>
+
+  <div class="eyebrow" style="margin-top:70px;">08 — Credentials</div>
+  <h2 class="sec-title reveal">Certifications</h2>
+  <div class="cert-list reveal">
+    <div class="cert"><div class="dot"></div><div>Front-End Developer Certification</div><div class="org">Infosys Springboard</div></div>
+    <div class="cert"><div class="dot"></div><div>MongoDB Certified Associate Developer (Java)</div><div class="org">MongoDB</div></div>
+    <div class="cert"><div class="dot"></div><div>Back-End Developer Certification</div><div class="org">Meta</div></div>
+    <div class="cert"><div class="dot"></div><div>Operating Systems — Elite + Top 5%</div><div class="org">NPTEL</div></div>
+    <div class="cert"><div class="dot"></div><div>Foundations of Data Science</div><div class="org">Certification</div></div>
+    <div class="cert"><div class="dot"></div><div>Data Analytics and Visualization Job Simulation</div><div class="org">Accenture</div></div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:70px;">09 — Currently Learning</div>
+  <h2 class="sec-title reveal">Currently Learning</h2>
+  <div class="learning-grid reveal">
+    <div class="learning-card"><div class="ico">🌱</div><h4>Spring Boot</h4></div>
+    <div class="learning-card"><div class="ico">🏗️</div><h4>System Design</h4></div>
+    <div class="learning-card"><div class="ico">🧠</div><h4>Advanced DSA</h4></div>
+    <div class="learning-card"><div class="ico">🔧</div><h4>Backend Architecture</h4></div>
+    <div class="learning-card"><div class="ico">🤖</div><h4>AI Integration</h4></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="eyebrow">10 — Contact</div>
+  <h2 class="sec-title reveal">Let's Connect.</h2>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <p class="lead">Open to internships, technical opportunities, collaborations, and learning experiences.</p>
+      <div class="contact-row"><span class="ico">✉️</span><a href="mailto:shanthalakshmi2606@gmail.com">shanthalakshmi2606@gmail.com</a></div>
+      <div class="contact-row"><span class="ico">📞</span><a href="tel:+917339648448">+91 73396 48448</a></div>
+      <div class="contact-row"><span class="ico">📍</span><span>Chennai, India</span></div>
+      <div class="contact-row"><span class="ico">🐙</span><a href="https://github.com/shantha26" target="_blank" rel="noopener">github.com/shantha26</a></div>
+      <div class="contact-row"><span class="ico">💼</span><a href="https://www.linkedin.com/in/shantha-lakshmi-s/" target="_blank" rel="noopener">linkedin.com/in/shantha-lakshmi-s</a></div>
+    </div>
+    <form id="contact-form" novalidate>
+      <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off">
+      <div class="field">
+        <label for="f-name">Name</label>
+        <input id="f-name" name="name" type="text" required>
+        <div class="error" id="err-name"></div>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required>
+        <div class="error" id="err-email"></div>
+      </div>
+      <div class="field">
+        <label for="f-message">Message</label>
+        <textarea id="f-message" name="message" rows="5" required></textarea>
+        <div class="error" id="err-message"></div>
+      </div>
+      <button type="submit" class="btn solid" id="submit-btn" aria-live="polite">
+        <span class="btn-spinner" aria-hidden="true"></span>
+        <span class="btn-label">Send Message</span>
+      </button>
+      <div id="form-status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span>Built with HTML, CSS, JavaScript &amp; Three.js · © 2026 Shantha Lakshmi S</span>
+  <div class="footer-links">
+    <a href="https://github.com/shantha26" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/shantha-lakshmi-s/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:shanthalakshmi2606@gmail.com">Email</a>
+  </div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+const root = document.documentElement;
+const themeBtn = document.getElementById('theme-toggle');
+function setTheme(t){
+  root.setAttribute('data-theme', t);
+  themeBtn.textContent = t === 'light' ? '☀️' : '🌙';
+  localStorage.setItem('sl-theme', t);
+}
+setTheme(localStorage.getItem('sl-theme') || 'dark');
+themeBtn.addEventListener('click', ()=>{
+  setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+});
+
+const progress = document.getElementById('scroll-progress');
+const backTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', ()=>{
+  const h = document.documentElement;
+  const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = pct + '%';
+  backTop.classList.toggle('show', h.scrollTop > 500);
+});
+backTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
+},{threshold:0.12});
+reveals.forEach(r=>obs.observe(r));
+
+const counters = document.querySelectorAll('.num[data-count]');
+const counterObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting && !e.target.dataset.done){
+      e.target.dataset.done = "true";
+      const el = e.target;
+      const target = parseFloat(el.dataset.count);
+      const isDecimal = el.dataset.decimal === "true";
+      const noCount = el.dataset.nocount === "true";
+      const suffix = el.dataset.suffix || "";
+      if(noCount){ el.textContent = target; counterObs.unobserve(el); return; }
+      let cur = 0;
+      const steps = 40;
+      const inc = target / steps;
+      const interval = setInterval(()=>{
+        cur += inc;
+        if(cur >= target){ cur = target; clearInterval(interval); }
+        el.textContent = (isDecimal ? cur.toFixed(2) : Math.floor(cur)) + suffix;
+      }, 30);
+      counterObs.unobserve(el);
+    }
+  });
+},{threshold:0.4});
+counters.forEach(c=>counterObs.observe(c));
+
+/* ── EmailJS Configuration ──────────────────────────────────────────
+   Paste your EmailJS Public Key below (Account → API Keys on emailjs.com)
+*/
+const EMAILJS_PUBLIC_KEY = 'cdHbcWS19_gTuov07'; // <-- YOUR PUBLIC KEY GOES HERE
+const EMAILJS_SERVICE_ID  = 'service_o0dn05z';
+const EMAILJS_TEMPLATE_ID = 'template_dpwaog7';
+
+emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+const form = document.getElementById('contact-form');
+const statusEl = document.getElementById('form-status');
+const submitBtn = document.getElementById('submit-btn');
+const btnLabel = submitBtn.querySelector('.btn-label');
+const btnSpinner = submitBtn.querySelector('.btn-spinner');
+
+function showError(id, msg){ document.getElementById(id).textContent = msg; }
+function clearErrors(){ ['err-name','err-email','err-message'].forEach(id=>document.getElementById(id).textContent = ''); }
+
+function setStatus(type, msg){
+  statusEl.className = type;
+  statusEl.textContent = msg;
+  statusEl.setAttribute('role', 'status');
+}
+
+function setButtonState(state){
+  // state: 'idle' | 'loading' | 'success' | 'error'
+  if(state === 'loading'){
+    submitBtn.disabled = true;
+    btnSpinner.style.display = 'inline-block';
+    btnLabel.textContent = 'Sending...';
+  } else if(state === 'success'){
+    submitBtn.disabled = true;
+    btnSpinner.style.display = 'none';
+    btnLabel.textContent = 'Message Sent ✓';
+    submitBtn.classList.add('btn-success-state');
+  } else if(state === 'error'){
+    submitBtn.disabled = false;
+    btnSpinner.style.display = 'none';
+    btnLabel.textContent = 'Send Message';
+    submitBtn.classList.remove('btn-success-state');
+  } else {
+    submitBtn.disabled = false;
+    btnSpinner.style.display = 'none';
+    btnLabel.textContent = 'Send Message';
+    submitBtn.classList.remove('btn-success-state');
+  }
+}
+
+function validate(name, email, message){
+  let valid = true;
+  if(name.length < 2){ showError('err-name', 'Please enter your name (min. 2 characters).'); valid = false; }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ showError('err-email', 'Please enter a valid email address.'); valid = false; }
+  if(message.length < 10){ showError('err-message', 'Message should be at least 10 characters.'); valid = false; }
+  return valid;
+}
+
+form.addEventListener('submit', async function(e){
+  e.preventDefault();
+  clearErrors();
+  setStatus('', '');
+
+  // Honeypot spam protection — if filled, silently abort
+  if(form.company.value.trim() !== ''){ return; }
+
+  const name = form.name.value.trim();
+  const email = form.email.value.trim();
+  const message = form.message.value.trim();
+
+  if(!validate(name, email, message)) return;
+
+  setButtonState('loading');
+
+  try{
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+      name: name,
+      email: email,
+      message: message,
+      time: new Date().toLocaleString()
+    });
+
+    setButtonState('success');
+    setStatus('success', '✅ Message Sent Successfully — thank you! I will reply soon.');
+    form.reset();
+
+    setTimeout(()=>{ setButtonState('idle'); }, 3000);
+
+  } catch(err){
+    console.error('EmailJS send failed:', err);
+    setButtonState('error');
+    const detail = (err && (err.text || err.message)) ? ` (${err.text || err.message})` : '';
+    setStatus('error', `❌ Failed to send message${detail}. Please try again or email me directly.`);
+  }
+});
+
+
+(function(){
+  const canvas = document.getElementById('hero-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(55, canvas.clientWidth/canvas.clientHeight || 1, 0.1, 100);
+  camera.position.set(0,0,9);
+
+  function resize(){
+    const w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w,h,false);
+    camera.aspect = w/h; camera.updateProjectionMatrix();
+  }
+  window.addEventListener('resize', resize);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const geo = new THREE.IcosahedronGeometry(3, 1);
+  const mat = new THREE.MeshBasicMaterial({color:0x5EEAD4, wireframe:true, transparent:true, opacity:0.55});
+  const core = new THREE.Mesh(geo, mat);
+  group.add(core);
+
+  const nodeGeo = new THREE.BufferGeometry();
+  nodeGeo.setAttribute('position', geo.attributes.position);
+  const nodeMat = new THREE.PointsMaterial({color:0xF5A623, size:0.09});
+  const nodes = new THREE.Points(nodeGeo, nodeMat);
+  group.add(nodes);
+
+  const shellGeo = new THREE.IcosahedronGeometry(4.4, 0);
+  const shellMat = new THREE.MeshBasicMaterial({color:0x5EEAD4, wireframe:true, transparent:true, opacity:0.12});
+  const shell = new THREE.Mesh(shellGeo, shellMat);
+  group.add(shell);
+
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener('mousemove', (e)=>{
+    mouseX = (e.clientX/window.innerWidth - 0.5);
+    mouseY = (e.clientY/window.innerHeight - 0.5);
+  });
+
+  resize();
+  function animate(t){
+    requestAnimationFrame(animate);
+    group.rotation.y += 0.0028;
+    group.rotation.x = Math.sin(t*0.0002)*0.15 + mouseY*0.3;
+    group.rotation.y += mouseX*0.0008;
+    shell.rotation.y -= 0.0012;
+    renderer.render(scene, camera);
+  }
+  requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
